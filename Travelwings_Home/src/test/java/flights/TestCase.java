@@ -1,19 +1,14 @@
 package flights;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 public class TestCase {
 	
 	WebDriver driver;
@@ -24,25 +19,13 @@ public class TestCase {
 	public void bc() {
 		driver=BrowserFactory.openBrowser();	 
 	}
-	
-	@BeforeSuite
-	public void setupsuite() {
-		//ExtentHtmlReporter extent = new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Reports/sonu"+Helper.getCurrentDateTime()+".html"));
-		ExtentHtmlReporter extent = new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Reports/sonu"+".html"));
-		report = new ExtentReports();
-		report.attachReporter(extent);
-	}
-	
 
 	@Test
 	public void flight_booking() throws InterruptedException {
 		
-		logger=report.createTest("Flight booking");	 
-		logger.info("starting application");  
-		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		driver.get("https://www.facebook.com/");
+		driver.get("https://newuat.travelwings.com/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 //		driver.findElement(By.id("origin_0")).sendKeys("del");
@@ -205,12 +188,12 @@ public class TestCase {
 	@AfterMethod
 	public void teardown(ITestResult result) throws IOException {
 	if(result.getStatus()==ITestResult.FAILURE) {
-		logger.fail("Test fail", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshot(driver)).build());
+		Helper.captureScreenshot(driver);
+		
 	}
 	else if(result.getStatus()==ITestResult.SUCCESS) {
-		logger.pass("Test pass", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshot(driver)).build());
-	}
-	report.flush();
+	
+		Helper.captureScreenshot(driver);}
 }
 
 

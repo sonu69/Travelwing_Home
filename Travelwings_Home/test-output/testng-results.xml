@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="15137" started-at="2019-05-11T13:15:39Z" finished-at="2019-05-11T13:15:54Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="15137" started-at="2019-05-11T13:15:39Z" finished-at="2019-05-11T13:15:54Z">
+      <class name="flights.TestCase">
+        <test-method status="PASS" signature="setupsuite()[pri:0, instance:flights.TestCase@604ed9f0]" name="setupsuite" is-config="true" duration-ms="229" started-at="2019-05-11T13:15:39Z" finished-at="2019-05-11T13:15:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupsuite -->
+        <test-method status="PASS" signature="bc()[pri:0, instance:flights.TestCase@604ed9f0]" name="bc" is-config="true" duration-ms="2822" started-at="2019-05-11T13:15:39Z" finished-at="2019-05-11T13:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bc -->
+        <test-method status="PASS" signature="flight_booking()[pri:0, instance:flights.TestCase@604ed9f0]" name="flight_booking" duration-ms="10852" started-at="2019-05-11T13:15:42Z" finished-at="2019-05-11T13:15:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flight_booking -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:flights.TestCase@604ed9f0]" name="teardown" is-config="true" duration-ms="1442" started-at="2019-05-11T13:15:53Z" finished-at="2019-05-11T13:15:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=flight_booking status=SUCCESS method=TestCase.flight_booking()[pri:0, instance:flights.TestCase@604ed9f0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- flights.TestCase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
