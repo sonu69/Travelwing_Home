@@ -2,7 +2,13 @@ package flights;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -28,18 +34,18 @@ public class TestCase {
 		driver.get("https://newuat.travelwings.com/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-//		driver.findElement(By.id("origin_0")).sendKeys("del");
-//		Actions act = new Actions(driver);
-//		
-//		WebElement origin_add=driver.findElement(By.xpath("//div[@class='ctyname' and text()='New Delhi (DEL)']"));
-//		act.moveToElement(origin_add).build().perform();
-//		origin_add.click();
-//		
-//		driver.findElement(By.id("destination_0")).sendKeys("dxb");
-//		WebElement dest_add=driver.findElement(By.xpath("//div[@class='ctyname' and text()='Dubai (DXB)']"));
-//		act.moveToElement(dest_add).build().perform();
-//		dest_add.click();
-//		
+		driver.findElement(By.id("origin_0")).sendKeys("del");
+		Actions act = new Actions(driver);
+		
+		WebElement origin_add=driver.findElement(By.xpath("//div[@class='ctyname' and text()='New Delhi (DEL)']"));
+		act.moveToElement(origin_add).build().perform();
+		origin_add.click();
+		
+		driver.findElement(By.id("destination_0")).sendKeys("dxb");
+		WebElement dest_add=driver.findElement(By.xpath("//div[@class='ctyname' and text()='Dubai (DXB)']"));
+		act.moveToElement(dest_add).build().perform();
+		dest_add.click();
+		
 //		driver.findElement(By.id("journeyDate_0")).click();
 //		WebDriverWait wait = new WebDriverWait(driver,10);
 //		

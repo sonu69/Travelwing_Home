@@ -9,7 +9,7 @@ public class BrowserFactory {
 		private static WebDriver driver;
 		
 		public static WebDriver openBrowser() {
-			String browsername = "chrome";
+			String browsername = "firefox";
 			
 			if(browsername.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", ".//Drivers//chromedriver.exe");
